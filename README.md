@@ -59,12 +59,12 @@ There are multiple options for the installation, depending on how you are intend
 
 ### Engine in virtual environment
 ```bash
-pip install project_name
+pip install dlg_monte_carlo
 ```
 This will only work after releasing the project to PyPi.
 ### Engine in Docker container
 ```bash
-docker exec -t daliuge-engine bash -c 'pip install --prefix=$DLG_ROOT/code project_name'
+docker exec -t daliuge-engine bash -c 'pip install --prefix=$DLG_ROOT/code dlg_monte_carlo'
 ```
 ## Usage
 For example the MyComponent component will be available to the engine when you specify 

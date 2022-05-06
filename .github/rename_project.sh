@@ -30,7 +30,7 @@ do
     echo "Renamed $filename"
 done
 
-mv project_name $name
+mv dlg_monte_carlo $name
 
 # remove the template related documents
 rm ABOUT_THIS_TEMPLATE.md

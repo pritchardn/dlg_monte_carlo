@@ -1,13 +1,13 @@
 # __main__ is not required for DALiuGE components.
 import argparse  # pragma: no cover
 
-from . import MyAppDROP  # pragma: no cover
+from . import MonteCarloDROP  # pragma: no cover
 
 
 def main() -> None:  # pragma: no cover
     """
     The main function executes on commands:
-    `python -m project_name` and `$ project_name `.
+    `python -m dlg_monte_carlo` and `$ dlg_monte_carlo `.
 
     This is your program's entry point.
 
@@ -21,23 +21,16 @@ def main() -> None:  # pragma: no cover
         * Run an application (Flask, FastAPI, Django, etc.)
     """
     parser = argparse.ArgumentParser(
-        description="project_name.",
-        epilog="Enjoy the project_name functionality!",
-    )
-    # This is required positional argument
-    parser.add_argument(
-        "name",
-        type=str,
-        help="The username",
-        default="author_name",
+        description="dlg_monte_carlo.",
+        epilog="Enjoy the dlg_monte_carlo functionality!",
     )
     # This is optional named argument
     parser.add_argument(
-        "-m",
-        "--message",
-        type=str,
-        help="The Message",
-        default="Hello",
+        "-N",
+        "--numtrials",
+        type=int,
+        help="The number of darts to throw",
+        default=10000,
         required=False,
     )
     parser.add_argument(
@@ -47,13 +40,12 @@ def main() -> None:  # pragma: no cover
         help="Optionally adds verbosity",
     )
     args = parser.parse_args()
-    print(f"{args.message} {args.name}!")
     if args.verbose:
         print("Verbose mode is on.")
 
     print("Executing main function")
-    comp = MyAppDROP()
-    print(comp.run())
+    comp = MonteCarloDROP(oid='a', uid='a', numtrials=args.numtrials)
+    comp.run()
     print("End of main function")
 
 

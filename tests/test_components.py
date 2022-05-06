@@ -1,12 +1,12 @@
 import pytest
 
-from project_name import MyAppDROP, MyDataDROP
+from dlg_monte_carlo import MonteCarloDROP, MyDataDROP
 
 given = pytest.mark.parametrize
 
 
 def test_myApp_class():
-    assert MyAppDROP("a", "a").run() == "Hello from MyAppDROP"
+    assert MonteCarloDROP("a", "a").run() == "Hello from MonteCarloDROP"
 
 
 def test_myData_class():
